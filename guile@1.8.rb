@@ -16,9 +16,9 @@ class GuileAT18 < Formula
   depends_on 'readline'
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system "./configure", "--without-threads",
                           "--prefix=#{prefix}",
-                          "--with-libreadline-prefix=#{Formula.factory('readline').prefix}"
+                          "--with-libreadline-prefix=#{Formulary.factory('readline').prefix}"
     system "make install"
 
     # A really messed up workaround required on OS X --mkhl
